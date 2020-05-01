@@ -1,10 +1,12 @@
-import Vue from "vue";
-import App from "./App.vue";
-import store from "./store";
+import _Vue from "vue";
+import Camera from "./components/Camera.vue";
 
-Vue.config.productionTip = false;
+export default {
+  install(Vue: typeof _Vue, options: any) {
+    Vue.prototype.$myStore = function () { return options.store };
 
-new Vue({
-  store,
-  render: h => h(App)
-}).$mount("#app");
+    Vue.prototype.$nick = "MY NAME IS NICK";
+
+    Vue.component("camera-control", Camera);
+  }
+};

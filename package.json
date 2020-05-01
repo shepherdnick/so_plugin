@@ -2,9 +2,14 @@
   "name": "so_plugin",
   "version": "0.1.0",
   "private": true,
+  "main": "./dist/so_plugin.common.js",
+  "types": "./dist/main.d.ts",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build src/main.ts --target lib --name so_plugin",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
