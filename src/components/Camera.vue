@@ -7,8 +7,12 @@ export default class Camera extends Vue {
     this.isAlarmFeature();
   }
 
+  private message = "";
+
   public isAlarmFeature() {
-    const featureList = this.$myStore.getters.getFeatureList;
+    //const othervar = this.$myStore.getters["getFeatureList"];
+    //const featureList = this.$store.getters["getFeatureList"];
+    this.message = this.$myProperty;
     return false;
   }
 }
@@ -16,6 +20,7 @@ export default class Camera extends Vue {
 
 <template>
   <div>
-    <h1 v-show="isAlarmFeature">I AM A CAMERA COMPONENT FROM THE PLUGIN</h1>
+    <button type="button" @click="isAlarmFeature">CLICK</button>
+    <h1 v-show="isAlarmFeature">Message: {{ message }}</h1>
   </div>
 </template>
